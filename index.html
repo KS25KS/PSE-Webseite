@@ -1,11 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Interaktive Periodentabelle</title>
+    <link rel="stylesheet" href="styles.css">
+     <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-thin.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-solid.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-regular.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-light.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-thin.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-solid.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-regular.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-light.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-thin.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-regular.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-light.css"
+/>
 </head>
 <body>
+
+ <nav class="navbar">
+  <div class="logo">Periodentabelle</div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Quiz</a></li>
+    <li><a href="#">About</a></li>
+    <li><i class="fa-regular fa-circle-info fa-lg" id="legend-toggle"></i></li>
+  </ul>
+</nav>
+
+<div id="legend" class="legend">
+  <h3>Legende</h3>
+  <ul>
+    <li>K = Kelvin</li>
+    <li>°C = Celsius</li>
+    <li>EN = Elektronegativität</li>
+    <li>Mp = Schmelztemperatur</li>
+    <li>Bp = Siedepunkt</li>
+    <li>Mag = Magnetisierbarkeit</li>
+    <li>Moleküle = Häufige Bindungen</li>
+    <li>Vorkommen = Häufige Fundorte</li>
+  </ul>
+</div>
+
+<div class="background-orbs"></div>
+
+<main class="table-container">
+  <div class="periodic-grid">
+    <!-- Hydrogen -->
+    <div class="element-card" data-element="H" style="grid-column:1;"><div class="symbol">H</div><div class="number">1</div></div>
     
+    <!-- Helium (far right in same row as H) -->
+    <div class="element-card" data-element="He" style="grid-column:18;"><div class="symbol">He</div><div class="number">2</div></div>
+    
+    <!-- Lithium → Neon row example -->
+    <div class="element-card" data-element="Li"><div class="symbol">Li</div><div class="number">3</div></div>
+    <div class="element-card" data-element="Be"><div class="symbol">Be</div><div class="number">4</div></div>
+    <div class="element-card empty" style="grid-column:13;"></div>
+    <div class="element-card" data-element="B"><div class="symbol">B</div><div class="number">5</div></div>
+    <div class="element-card" data-element="C"><div class="symbol">C</div><div class="number">6</div></div>
+    <div class="element-card" data-element="N"><div class="symbol">N</div><div class="number">7</div></div>
+    <div class="element-card" data-element="O"><div class="symbol">O</div><div class="number">8</div></div>
+    <div class="element-card" data-element="F"><div class="symbol">F</div><div class="number">9</div></div>
+    <div class="element-card" data-element="Ne"><div class="symbol">Ne</div><div class="number">10</div></div>
+    
+    <!-- Continue for all 118 elements -->
+  </div>
+</main>
+
+<!-- Full-screen element overlay -->
+<div id="element-overlay" class="overlay">
+  <nav class="overlay-navbar">
+    <button id="back-btn"><i class="fa-duotone fa-solid fa-arrow-left-from-arc fa-xl"></i> Zurück</button>
+    <div class="overlay-title">Homepage</div>
+  </nav>
+  <div class="overlay-content">
+    <div class="overlay-left">
+      <h1 id="overlay-name"></h1>
+      <div id="overlay-symbol" class="element-symbol"></div>
+      <div id="overlay-number" class="element-number"></div>
+      <!-- Removed the 3D Atommodell div -->
+      <p id="overlay-siedepunkt"></p>
+      <p id="overlay-schmelztemperatur"></p>
+      <p id="overlay-vorkommen"></p>
+      <p id="overlay-molekuele"></p>
+      <p id="overlay-elektronegativitaet"></p>
+      <p id="overlay-magnetismus"></p>
+      <p id="overlay-eigenschaften"></p>
+      <p id="overlay-beschreibung"></p>
+    </div>
+    <div class="overlay-right">
+      <div class="element-image" id="element-image">Bild hier</div>
+    </div>
+  </div>
+</div>
+
+
+<script src="script.js"></script>
 </body>
 </html>
