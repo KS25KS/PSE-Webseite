@@ -78,7 +78,9 @@
     <li><a href="#">Home</a></li>
     <li><a href="#">Quiz</a></li>
     <li><a href="#">About</a></li>
-    <li><i class="fa-regular fa-circle-info fa-lg" id="legend-toggle"></i></li>
+    <li>
+      <i class="fa-regular fa-circle-info fa-lg" id="legend-toggle"></i>
+    </li>
   </ul>
 </nav>
 
@@ -93,46 +95,38 @@
     <li>Mag = Magnetisierbarkeit</li>
     <li>Moleküle = Häufige Bindungen</li>
     <li>Vorkommen = Häufige Fundorte</li>
+
+    <hr>
+
+    <li><span style="color:#4fa3ff;">●</span> Metalle</li>
+    <li><span style="color:#3cff9e;">●</span> Halbmetalle</li>
+    <li><span style="color:#ffb347;">●</span> Nichtmetalle</li>
   </ul>
 </div>
 
 <div class="background-orbs"></div>
 
+<!-- ✅ IMPORTANT PART -->
 <main class="table-container">
-  <div class="periodic-grid">
-    <!-- Hydrogen -->
-    <div class="element-card" data-element="H" style="grid-column:1;"><div class="symbol">H</div><div class="number">1</div></div>
-    
-    <!-- Helium (far right in same row as H) -->
-    <div class="element-card" data-element="He" style="grid-column:18;"><div class="symbol">He</div><div class="number">2</div></div>
-    
-    <!-- Lithium → Neon row example -->
-    <div class="element-card" data-element="Li"><div class="symbol">Li</div><div class="number">3</div></div>
-    <div class="element-card" data-element="Be"><div class="symbol">Be</div><div class="number">4</div></div>
-    <div class="element-card empty" style="grid-column:13;"></div>
-    <div class="element-card" data-element="B"><div class="symbol">B</div><div class="number">5</div></div>
-    <div class="element-card" data-element="C"><div class="symbol">C</div><div class="number">6</div></div>
-    <div class="element-card" data-element="N"><div class="symbol">N</div><div class="number">7</div></div>
-    <div class="element-card" data-element="O"><div class="symbol">O</div><div class="number">8</div></div>
-    <div class="element-card" data-element="F"><div class="symbol">F</div><div class="number">9</div></div>
-    <div class="element-card" data-element="Ne"><div class="symbol">Ne</div><div class="number">10</div></div>
-    
-    <!-- Continue for all 118 elements -->
-  </div>
+  <!-- JS will generate ALL 118 elements here -->
+  <div class="periodic-grid" id="periodic-grid"></div>
 </main>
 
-<!-- Full-screen element overlay -->
+<!-- OVERLAY -->
 <div id="element-overlay" class="overlay">
   <nav class="overlay-navbar">
-    <button id="back-btn"><i class="fa-duotone fa-solid fa-arrow-left-from-arc fa-xl"></i> Zurück</button>
-    <div class="overlay-title">Homepage</div>
+    <button id="back-btn">
+      <i class="fa-solid fa-arrow-left"></i> Zurück
+    </button>
+    <div class="overlay-title">Element-Details</div>
   </nav>
+
   <div class="overlay-content">
     <div class="overlay-left">
       <h1 id="overlay-name"></h1>
       <div id="overlay-symbol" class="element-symbol"></div>
       <div id="overlay-number" class="element-number"></div>
-      <!-- Removed the 3D Atommodell div -->
+
       <p id="overlay-siedepunkt"></p>
       <p id="overlay-schmelztemperatur"></p>
       <p id="overlay-vorkommen"></p>
@@ -142,12 +136,14 @@
       <p id="overlay-eigenschaften"></p>
       <p id="overlay-beschreibung"></p>
     </div>
+
     <div class="overlay-right">
-      <div class="element-image" id="element-image">Bild hier</div>
+      <div class="element-image" id="element-image">
+        Bild hier
+      </div>
     </div>
   </div>
 </div>
-
 
 <script src="script.js"></script>
 </body>

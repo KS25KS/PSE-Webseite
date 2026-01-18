@@ -25,7 +25,7 @@ body {
   max-height: 60%;
   overflow-y: auto;
   display: none;
-  z-index: 9999; /* <- make sure it is on top of everything */
+  z-index: 9999; 
 }
 
 .legend ul { padding-left:15px; }
@@ -67,3 +67,40 @@ body {
 .overlay-right { flex:1; min-width:300px; padding:10px; display:flex; justify-content:center; align-items:center; }
 .element-image { width:250px; height:250px; background: rgba(255,255,255,0.1); border-radius:12px; display:flex; justify-content:center; align-items:center; }
 .atom-model { width:250px; height:250px; background: rgba(0,150,255,0.2); border-radius:50%; margin:20px auto; display:flex; justify-content:center; align-items:center; box-shadow:0 0 15px rgba(0,255,255,0.5); }
+
+
+.element-card.metall {
+  background: linear-gradient(
+    135deg,
+    rgba(70,130,255,0.35),
+    rgba(20,60,180,0.35)
+  );
+  box-shadow: 0 0 10px rgba(70,130,255,0.6);
+}
+
+.element-card.halbmetall {
+  background: linear-gradient(
+    135deg,
+    rgba(60,255,160,0.35),
+    rgba(20,140,80,0.35)
+  );
+  box-shadow: 0 0 10px rgba(60,255,160,0.6);
+}
+
+.element-card.nichtmetall {
+  background: linear-gradient(
+    135deg,
+    rgba(255,190,60,0.35),
+    rgba(255,120,40,0.35)
+  );
+  box-shadow: 0 0 10px rgba(255,170,60,0.6);
+}
+
+.background-orbs {
+  pointer-events: none;
+}
+
+.periodic-grid {
+  position: relative;
+  z-index: 10;
+}

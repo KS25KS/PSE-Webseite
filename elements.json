@@ -1,5 +1,16 @@
-{
-  "H": {"name":"Wasserstoff","symbol":"H","ordnungszahl":1,"siedepunkt":"20.28 K","schmelztemperatur":"13.99 K","vorkommen":"universell im Wasserstoffgas und Wasser","molekuele":"H2","elektronegativitaet":"2,20","magnetismus":"nicht magnetisch","eigenschaften":"farblos, geruchlos, leichtestes Element","beschreibung":"Wasserstoff ist das leichteste und häufigste chemische Element im Universum.","image":""},
+
+  "H": {
+    "name":"Wasserstoff",
+    "symbol":"H",
+    "ordnungszahl":1,
+    "siedepunkt":"20.28 K",
+    "schmelztemperatur":"13.99 K",
+    "vorkommen":"universell im Wasserstoffgas und Wasser",
+    "molekuele":"H2","elektronegativitaet":"2,20","magnetismus":"nicht magnetisch",
+    "eigenschaften":"farblos, geruchlos, leichtestes Element",
+    "beschreibung":"Wasserstoff ist das leichteste und häufigste chemische Element im Universum.",
+    "image":""},
+    
   "He": {"name":"Helium","symbol":"He","ordnungszahl":2,"siedepunkt":"4.22 K","schmelztemperatur":"0.95 K","vorkommen":"Erdatmosphäre, Gasquellen","molekuele":"He","elektronegativitaet":"-","magnetismus":"nicht magnetisch","eigenschaften":"farblos, geruchlos, Edelgas","beschreibung":"Helium ist ein farbloses, chemisch inertes Edelgas.","image":""},
   "Li": {"name":"Lithium","symbol":"Li","ordnungszahl":3,"siedepunkt":"1603 K","schmelztemperatur":"453,7 K","vorkommen":"Pegmatite, Mineralien","molekuele":"Li2O, LiCl","elektronegativitaet":"0,98","magnetismus":"paramagnetisch","eigenschaften":"leicht, silbrig, weich","beschreibung":"Lithium ist ein Alkalimetall, verwendet in Batterien und Legierungen.","image":""},
   "Be": {"name":"Beryllium","symbol":"Be","ordnungszahl":4,"siedepunkt":"2742 K","schmelztemperatur":"1560 K","vorkommen":"Mineralien wie Beryll, Bertrandit","molekuele":"BeO","elektronegativitaet":"1,57","magnetismus":"nicht magnetisch","eigenschaften":"hart, silbrig-weiß, leicht","beschreibung":"Beryllium ist ein seltenes Alkalimetall.","image":""},
@@ -19,7 +30,7 @@
   "Ar": {"name":"Argon","symbol":"Ar","ordnungszahl":18,"siedepunkt":"87.30 K","schmelztemperatur":"83.81 K","vorkommen":"Erdatmosphäre","molekuele":"Ar","elektronegativitaet":"-","magnetismus":"nicht magnetisch","eigenschaften":"farblos, geruchlos, Edelgas","beschreibung":"Argon ist ein farbloses Edelgas, in Glühbirnen verwendet.","image":""},
   "K": {"name":"Kalium","symbol":"K","ordnungszahl":19,"siedepunkt":"1032 K","schmelztemperatur":"336.7 K","vorkommen":"Salzlager, Mineralien","molekuele":"KCl","elektronegativitaet":"0,82","magnetismus":"paramagnetisch","eigenschaften":"weich, silbrig, Alkalimetall","beschreibung":"Kalium ist ein reaktives Alkalimetall, wichtig für Pflanzen.","image":""},
   "Ca": {"name":"Calcium","symbol":"Ca","ordnungszahl":20,"siedepunkt":"1757 K","schmelztemperatur":"1115 K","vorkommen":"Mineralien, Kreide, Kalkstein","molekuele":"CaO, CaCO3","elektronegativitaet":"1,00","magnetismus":"paramagnetisch","eigenschaften":"leicht, silbrig, fest","beschreibung":"Calcium ist ein Erdalkalimetall, wichtig für Knochen und Zähne.","image":""}
-}
+
 
   "Sc": {
     "name": "Scandium",
@@ -161,7 +172,7 @@
     "beschreibung": "Zink wird zum Verzinken und in Legierungen verwendet.",
     "image": ""
   }
-}
+
 
   "Ga": {
     "name": "Gallium",
@@ -303,7 +314,7 @@
     "beschreibung": "Zirkonium wird in Keramik und Kerntechnik verwendet.",
     "image": ""
   }
-}
+
 
   "Nb": {
     "name": "Niob",
@@ -445,7 +456,7 @@
     "beschreibung": "Zinn wird in Lötlegierungen und Dosenbeschichtungen verwendet.",
     "image": ""
   }
-}
+
 
   "Sb": {
     "name": "Antimon",
@@ -597,7 +608,7 @@
     "beschreibung": "Neodym wird in Permanentmagneten, Gläsern und Leuchtstoffen verwendet.",
     "image": ""
   }
-}
+
 "Pm": {
   "name": "Promethium",
   "symbol": "Pm",
