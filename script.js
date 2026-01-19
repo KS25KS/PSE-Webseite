@@ -1,29 +1,10 @@
-const grid = document.querySelector(".periodic-grid");
+const grid = document.getElementById("periodic-grid");
 let elementData = {};
 
-// CATEGORY COLORS
 const categoryClass = {
-  metall: "metal",
-  halbmetall: "metalloid",
-  nichtmetall: "nonmetal"
-};
-
-// GROUP + PERIOD MAPPING (ESSENTIAL)
-const positionMap = {
-  H:  { p:1, g:1,  c:"nichtmetall" },
-  He: { p:1, g:18, c:"nichtmetall" },
-
-  Li:{p:2,g:1,c:"metall"}, Be:{p:2,g:2,c:"metall"},
-  B:{p:2,g:13,c:"halbmetall"}, C:{p:2,g:14,c:"nichtmetall"},
-  N:{p:2,g:15,c:"nichtmetall"}, O:{p:2,g:16,c:"nichtmetall"},
-  F:{p:2,g:17,c:"nichtmetall"}, Ne:{p:2,g:18,c:"nichtmetall"},
-
-  Na:{p:3,g:1,c:"metall"}, Mg:{p:3,g:2,c:"metall"},
-  Al:{p:3,g:13,c:"metall"}, Si:{p:3,g:14,c:"halbmetall"},
-  P:{p:3,g:15,c:"nichtmetall"}, S:{p:3,g:16,c:"nichtmetall"},
-  Cl:{p:3,g:17,c:"nichtmetall"}, Ar:{p:3,g:18,c:"nichtmetall"}
-
-  // ⚠️ You can extend this later — layout will still work
+  metall: "Metall",
+  halbmetall: "Halbmetall",
+  nichtmetall: "Nichtmetall"
 };
 
 fetch("elements118.json")
@@ -31,25 +12,29 @@ fetch("elements118.json")
   .then(data => {
     elementData = data;
     createTable();
-  });
+  })
+  .catch(err => console.error("JSON load error:", err));
 
 function createTable() {
   grid.innerHTML = "";
 
   Object.keys(elementData).forEach(symbol => {
-    const pos = positionMap[symbol];
-    if (!pos) return; // prevents crashing
+    const elem = elementData[symbol];
 
+   
+    if (!elem.periode || !elem.gruppe || !elem.kategorie) return;
+
+    const catKey = (elem.kategorie || "Nichtmetall").trim().toLowerCase();
     const card = document.createElement("div");
-    card.className = `element-card ${categoryClass[pos.c]}`;
+    card.className = `element-card ${categoryClass[catKey] || "nichtmetall"}`;
     card.dataset.element = symbol;
 
-    card.style.gridColumn = pos.g;
-    card.style.gridRow = pos.p;
+    card.style.gridColumn = elem.gruppe;
+    card.style.gridRow = elem.periode;
 
     card.innerHTML = `
       <div class="symbol">${symbol}</div>
-      <div class="number">${elementData[symbol].ordnungszahl}</div>
+      <div class="number">${elem.ordnungszahl}</div>
     `;
 
     card.addEventListener("click", () => openOverlay(symbol));
@@ -78,10 +63,12 @@ function openOverlay(symbol) {
   document.getElementById("element-overlay").style.display = "block";
 }
 
+// Close overlay
 document.getElementById("back-btn").onclick = () => {
   document.getElementById("element-overlay").style.display = "none";
 };
 
+// Toggle legend
 document.getElementById("legend-toggle").onclick = () => {
   const l = document.getElementById("legend");
   l.style.display = l.style.display === "block" ? "none" : "block";
